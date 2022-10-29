@@ -6,9 +6,13 @@ export namespace Logger {
         outStream = fs.createWriteStream(fileName);
     }
     export function info(...args: any[]){
-        outStream.write(`INFO ${args.join(' ')}\n`);
+        let text = `INFO ${args.join(' ')}\n`;
+        outStream.write(text);
+        console.log(text);
     }
     export function error(...args: any[]){
-        outStream.write(`ERROR ${args.join(' ')}\n`);
+        let text = `ERROR ${args.join(' ')}\n`;
+        outStream.write(text);
+        console.error(text);
     }
 }
